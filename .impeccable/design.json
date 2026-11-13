@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T00:00:00Z",
+  "title": "Design System: Scholarship Desk",
+  "extensions": {
+    "world": { "catalog": "japanese-high-density-web", "seed": "ab41c36ee743b8e1", "chosenBy": "user" },
+    "constraints": [
+      "System font stacks only (user decision, 2026-11-12; self-hosting declined).",
+      "Palette is lilac, white and black (user decision, 2026-11-12; replaced the original utility red).",
+      "CSP default-src 'self': no external fonts, no inline styles.",
+      "DOM built with textContent; no build step.",
+      "Light theme only: white background even when the system is in dark mode (user decision, 2026-11-12)."
+    ],
+    "colorMeta": {
+      "ground":          { "role": "neutral",  "displayName": "Paper",          "canonical": "#ffffff" },
+      "panel":           { "role": "neutral",  "displayName": "Paper (panel)",  "canonical": "#ffffff" },
+      "fill":            { "role": "neutral",  "displayName": "Lilac Grey",     "canonical": "#f4f2f7" },
+      "fill-2":          { "role": "neutral",  "displayName": "Row Tint",       "canonical": "#faf8fc" },
+      "line":            { "role": "neutral",  "displayName": "Hairline",       "canonical": "#e7e3ee" },
+      "line-2":          { "role": "neutral",  "displayName": "Rule",           "canonical": "#d5cfe0" },
+      "ink":             { "role": "neutral",  "displayName": "Ink",            "canonical": "#111111",
+                           "tonalRamp": ["#0f0e11", "#111111", "#16141a", "#1a1820", "#1f1c25", "#2b2b2b", "#2c2834", "#3b3545", "#45424b", "#5c5866", "#8a8594", "#aaa4b5", "#d5cfe0", "#dcd8e3", "#e7e3ee", "#f2f0f5", "#faf8fc"] },
+      "ink-2":           { "role": "neutral",  "displayName": "Soft Ink",       "canonical": "#2b2b2b" },
+      "mute":            { "role": "neutral",  "displayName": "Mute",           "canonical": "#5c5866" },
+      "lilac":           { "role": "primary",  "displayName": "Lilac",          "canonical": "#c8a8e9",
+                           "tonalRamp": ["#1f1a27", "#2a1747", "#2a2235", "#4b2384", "#55308a", "#6a3fa8", "#9b74d0", "#b893e6", "#c8a8e9", "#cdb1f2", "#e0cdf8", "#e6d9f7", "#f4eefc"] },
+      "lilac-mid":       { "role": "primary",  "displayName": "Lilac Mist",     "canonical": "#e6d9f7" },
+      "lilac-soft":      { "role": "primary",  "displayName": "Lilac Wash",     "canonical": "#f4eefc" },
+      "lilac-deep":      { "role": "primary",  "displayName": "Deep Lilac",     "canonical": "#6a3fa8" },
+      "lilac-deeper":    { "role": "primary",  "displayName": "Pressed Lilac",  "canonical": "#55308a" },
+      "on-accent":       { "role": "primary",  "displayName": "On Deep Lilac",  "canonical": "#ffffff" },
+      "on-lilac":        { "role": "primary",  "displayName": "On Lilac",       "canonical": "#111111" },
+      "on-lilac-2":      { "role": "primary",  "displayName": "On Lilac Soft",  "canonical": "#2b2b2b" },
+      "on-lilac-accent": { "role": "primary",  "displayName": "On Lilac Accent", "canonical": "#4b2384" },
+      "ok":              { "role": "secondary", "displayName": "Status: settled (ink)",    "canonical": "#111111" },
+      "warn":            { "role": "secondary", "displayName": "Status: check (deep lilac)", "canonical": "#6a3fa8" },
+      "warn-soft":       { "role": "secondary", "displayName": "Banner wash",              "canonical": "#f4eefc" },
+      "info":            { "role": "secondary", "displayName": "Status: in progress (soft ink)", "canonical": "#2b2b2b" },
+      "violet":          { "role": "secondary", "displayName": "Status: later (mute)",     "canonical": "#5c5866" },
+      "active-count-dark": { "role": "primary", "displayName": "Active tab count (dark mode)", "canonical": "#55308a" }
+    },
+    "typographyMeta": {
+      "wordmark":        { "displayName": "Wordmark",        "purpose": "\"ScholarshipDesk\" in black on the lilac bar; Desk in on-lilac-accent." },
+      "numeral-display": { "displayName": "Numeral Display", "purpose": "Days left in deadline rows and KPI cells; deep lilac when urgent." },
+      "numeral-inline":  { "displayName": "Numeral Inline",  "purpose": "Deadline dates in rows and tables." },
+      "numeral-small":   { "displayName": "Numeral Small",   "purpose": "Tab counts, module notes, due figures, rank markers." },
+      "headline":        { "displayName": "Headline",        "purpose": "Section headings inside full tabs." },
+      "title":           { "displayName": "Title",           "purpose": "Module titles, tab labels, buttons (buttons and tabs at 600)." },
+      "body":            { "displayName": "Body",            "purpose": "Page default; 12.5px / 1.3 inside the mosaic." },
+      "body-dense":      { "displayName": "Body Dense",      "purpose": "Text inside mosaic modules." },
+      "label":           { "displayName": "Label",           "purpose": "Field labels, table heads, module sub-headers." },
+      "tag":             { "displayName": "Tag",             "purpose": "Chips (11px) and status pills (12px)." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "All transitions: module border on hover, toast, row flash." },
+      { "name": "module-hover", "value": "border-color 160ms", "purpose": "Module border darkens to ink." },
+      { "name": "toast", "value": "opacity 180ms, transform 180ms (translateY 8px to 0)", "purpose": "Status toast entrance." },
+      { "name": "row-flash", "value": "1.6s background lilac-soft to transparent", "purpose": "Marks a table row just opened from the Overview." },
+      { "name": "reduced-motion", "value": "transition: none; animation: none", "purpose": "Under prefers-reduced-motion: reduce." }
+    ],
+    "breakpoints": [
+      { "name": "narrow-desktop", "value": "1180px", "purpose": "3/4/8-col modules widen to 6, 6-col to 12; profile line hides." },
+      { "name": "mobile", "value": "760px", "purpose": "Mosaic to one column; top bar wraps; table cols 3-4 hide; forms single column." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Deep lilac primary action inside pages; the top bar's primary is black.",
+      "html": "<button class=\"ds-btn ds-btn-primary\" type=\"button\">Upload</button>",
+      "css": ".ds-btn { font: 600 13px/1.2 var(--ui, 'Segoe UI', system-ui, sans-serif); cursor: pointer; border-radius: 2px; border: 1px solid var(--line-2, #d5cfe0); background: var(--panel, #fff); color: var(--ink, #111); padding: 7px 12px; display: inline-flex; align-items: center; gap: 6px; } .ds-btn:hover { border-color: var(--ink, #111); } .ds-btn:focus-visible { outline: 2px solid var(--lilac-deep, #6a3fa8); outline-offset: 2px; } .ds-btn-primary { background: var(--lilac-deep, #6a3fa8); border-color: var(--lilac-deep, #6a3fa8); color: #fff; } .ds-btn-primary:hover { background: var(--lilac-deeper, #55308a); border-color: var(--lilac-deeper, #55308a); }"
+    },
+    {
+      "name": "Default Button",
+      "kind": "button",
+      "refersTo": "button-default",
+      "description": "Secondary actions; border darkens to ink on hover.",
+      "html": "<button class=\"ds-btn\" type=\"button\">Refresh</button>",
+      "css": ".ds-btn { font: 600 13px/1.2 var(--ui, 'Segoe UI', system-ui, sans-serif); cursor: pointer; border-radius: 2px; border: 1px solid var(--line-2, #d5cfe0); background: var(--panel, #fff); color: var(--ink, #111); padding: 7px 12px; } .ds-btn:hover { border-color: var(--ink, #111); } .ds-btn:focus-visible { outline: 2px solid var(--lilac-deep, #6a3fa8); outline-offset: 2px; }"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "White hairline field on the lilac bar; border goes to ink on focus, no glow.",
+      "html": "<label class=\"ds-search\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"6.5\"/><path d=\"m16 16 4.5 4.5\"/></svg><input type=\"search\" placeholder=\"Search opportunities, countries, fields\"></label>",
+      "css": ".ds-search { display: flex; align-items: center; gap: 8px; max-width: 560px; border: 1px solid var(--line-2, #d5cfe0); border-radius: 2px; padding: 0 10px; background: var(--panel, #fff); color: var(--mute, #5c5866); } .ds-search:focus-within { border-color: var(--ink, #111); } .ds-search svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; } .ds-search input { border: 0; outline: 0; background: transparent; padding: 7px 0; flex: 1; min-width: 0; font: 13px/1.45 var(--ui, 'Segoe UI', system-ui, sans-serif); color: var(--ink, #111); } .ds-search input::placeholder { color: var(--mute, #5c5866); }"
+    },
+    {
+      "name": "Tab Strip",
+      "kind": "nav",
+      "refersTo": "tab-active",
+      "description": "Lilac mist strip of square tabs with deep-lilac counts; the active tab fills black.",
+      "html": "<nav class=\"ds-tabs\"><button class=\"ds-active\">Overview</button><button>Opportunities <span class=\"ds-count\">9</span></button><button>Documents <span class=\"ds-count\">6</span></button></nav>",
+      "css": ".ds-tabs { display: flex; background: var(--lilac-mid, #e6d9f7); border-bottom: 1px solid var(--line-2, #d5cfe0); overflow-x: auto; } .ds-tabs button { border: 0; border-right: 1px solid var(--line-2, #d5cfe0); border-radius: 0; background: transparent; color: var(--ink-2, #2b2b2b); padding: 8px 14px; font: 600 13px/1.2 var(--ui, 'Segoe UI', system-ui, sans-serif); cursor: pointer; white-space: nowrap; } .ds-tabs button:hover { background: var(--panel, #fff); } .ds-tabs button:focus-visible { outline: 2px solid var(--lilac-deep, #6a3fa8); outline-offset: 2px; } .ds-tabs .ds-active { background: var(--ink, #111); color: var(--ground, #fff); } .ds-count { font: 700 12px Bahnschrift, 'DIN Alternate', 'Arial Narrow', sans-serif; margin-left: 4px; color: var(--lilac-deep, #6a3fa8); } .ds-active .ds-count { color: var(--lilac, #c8a8e9); }"
+    },
+    {
+      "name": "Tag Grammar",
+      "kind": "chip",
+      "refersTo": "tag-state",
+      "description": "Outlined = state, black filled = decided, deep lilac filled = urgent.",
+      "html": "<span class=\"ds-chip ds-ok\">Eligible</span><span class=\"ds-chip ds-warn\">Application fee</span><span class=\"ds-chip ds-accent\">Preparing</span><span class=\"ds-chip\">Fee unknown</span><span class=\"ds-chip ds-dark\">Shortlisted</span><span class=\"ds-chip ds-bad\">Needs you</span><span class=\"ds-chip ds-bad\">NEW</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; font: 700 11px/1.3 var(--ui, 'Segoe UI', system-ui, sans-serif); padding: 1px 6px; border: 1px solid var(--line-2, #d5cfe0); border-radius: 2px; color: var(--ink-2, #2b2b2b); background: var(--panel, #fff); white-space: nowrap; margin: 2px 4px 0 0; } .ds-ok { color: var(--ok, #111); border-color: currentColor; } .ds-warn { color: var(--warn, #6a3fa8); border-color: currentColor; } .ds-accent { color: var(--info, #2b2b2b); border-color: currentColor; } .ds-dark { color: var(--panel, #fff); border-color: var(--ink, #111); background: var(--ink, #111); } .ds-bad { color: #fff; border-color: var(--lilac-deep, #6a3fa8); background: var(--lilac-deep, #6a3fa8); }"
+    },
+    {
+      "name": "Module",
+      "kind": "card",
+      "refersTo": "module-header",
+      "description": "The mosaic's unit: lilac mist header with a black left tab, deep-lilac numeral note, View all link.",
+      "html": "<section class=\"ds-mod\"><div class=\"ds-mod-h\"><h2>Next deadlines</h2><span class=\"ds-note\">7 coming up</span><button class=\"ds-more\">View all <svg viewBox=\"0 0 24 24\"><path d=\"M9 6l6 6-6 6\"/></svg></button></div><p class=\"ds-line\">Rows go here, each separated by a dotted rule.</p></section>",
+      "css": ".ds-mod { background: var(--panel, #fff); border: 1px solid var(--line-2, #d5cfe0); border-radius: 2px; font: 12.5px/1.3 var(--ui, 'Segoe UI', system-ui, sans-serif); color: var(--ink, #111); transition: border-color 160ms cubic-bezier(.16, 1, .3, 1); } .ds-mod:hover { border-color: var(--ink, #111); } .ds-mod-h { display: flex; align-items: center; gap: 10px; background: var(--lilac-mid, #e6d9f7); border-bottom: 1px solid var(--line-2, #d5cfe0); padding: 0 8px 0 0; min-height: 32px; } .ds-mod-h::before { content: ''; align-self: stretch; width: 5px; background: var(--ink, #111); } .ds-mod-h h2 { font-size: 13px; font-weight: 700; margin: 0; } .ds-note { font: 700 12px Bahnschrift, 'DIN Alternate', 'Arial Narrow', sans-serif; color: var(--lilac-deep, #6a3fa8); } .ds-more { margin-left: auto; border: 0; background: none; padding: 4px 2px; font: 600 12px var(--ui, 'Segoe UI', system-ui, sans-serif); color: var(--ink-2, #2b2b2b); display: inline-flex; align-items: center; gap: 2px; cursor: pointer; } .ds-more:hover { color: var(--lilac-deep, #6a3fa8); } .ds-more:focus-visible { outline: 2px solid var(--lilac-deep, #6a3fa8); outline-offset: 2px; } .ds-more svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; } .ds-line { margin: 0; padding: 5px 10px; }"
+    },
+    {
+      "name": "Deadline Row",
+      "kind": "custom",
+      "refersTo": "numeral-display",
+      "description": "Signature: days left set like a price, deep lilac at 30 days or fewer.",
+      "html": "<button class=\"ds-dl\"><span class=\"ds-days ds-hot\">19<small>days</small></span><span class=\"ds-main\"><span class=\"ds-t\">Example funded PhD position</span><span class=\"ds-s\">Example University · Canada</span></span><span class=\"ds-date\">Dec 1, 2026</span><span class=\"ds-chip ds-dark\">Shortlisted</span></button>",
+      "css": ".ds-dl { display: grid; grid-template-columns: 62px minmax(0, 1fr) 90px auto; gap: 10px; align-items: center; width: 100%; border: 0; border-top: 1px dotted var(--line-2, #d5cfe0); border-radius: 0; background: none; padding: 5px 10px; text-align: left; font: 400 12.5px/1.3 var(--ui, 'Segoe UI', system-ui, sans-serif); color: var(--ink, #111); cursor: pointer; } .ds-dl:hover { background: var(--fill-2, #faf8fc); } .ds-dl:focus-visible { outline: 2px solid var(--lilac-deep, #6a3fa8); outline-offset: 2px; } .ds-days { font: 700 30px/0.9 Bahnschrift, 'DIN Alternate', 'Arial Narrow', sans-serif; font-variant-numeric: tabular-nums; text-align: right; } .ds-hot { color: var(--lilac-deep, #6a3fa8); } .ds-days small { display: block; font: 600 11px var(--ui, 'Segoe UI', system-ui, sans-serif); color: var(--mute, #5c5866); margin-top: 3px; } .ds-main { min-width: 0; } .ds-t { display: block; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .ds-s { display: block; font-size: 12px; color: var(--mute, #5c5866); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .ds-date { font: 700 14px Bahnschrift, 'DIN Alternate', 'Arial Narrow', sans-serif; text-align: right; white-space: nowrap; } .ds-chip { font: 700 11px/1.3 var(--ui, 'Segoe UI', system-ui, sans-serif); padding: 1px 6px; border: 1px solid; border-radius: 2px; white-space: nowrap; } .ds-dark { color: #fff; border-color: var(--ink, #111); background: var(--ink, #111); }"
+    },
+    {
+      "name": "KPI Cells",
+      "kind": "custom",
+      "refersTo": "numeral-display",
+      "description": "Four hairline-divided cells: big numeral over a muted label; deep lilac for urgent nonzero.",
+      "html": "<div class=\"ds-kpis\"><button class=\"ds-kpi\"><b>11</b><span>Found</span></button><button class=\"ds-kpi\"><b>2</b><span>Shortlisted</span></button><button class=\"ds-kpi ds-hot\"><b>2</b><span>Not eligible</span></button><button class=\"ds-kpi\"><b>0</b><span>Submitted</span></button></div>",
+      "css": ".ds-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line-2, #d5cfe0); background: var(--panel, #fff); } .ds-kpi { display: block; text-align: left; border: 0; border-right: 1px solid var(--line, #e7e3ee); border-radius: 0; background: none; padding: 8px 10px; cursor: pointer; } .ds-kpi:last-child { border-right: 0; } .ds-kpi:hover { background: var(--fill-2, #faf8fc); } .ds-kpi:focus-visible { outline: 2px solid var(--lilac-deep, #6a3fa8); outline-offset: 2px; } .ds-kpi b { display: block; font: 700 30px/1 Bahnschrift, 'DIN Alternate', 'Arial Narrow', sans-serif; color: var(--ink, #111); } .ds-kpi span { display: block; font: 600 12px var(--ui, 'Segoe UI', system-ui, sans-serif); color: var(--mute, #5c5866); margin-top: 3px; } .ds-hot b { color: var(--lilac-deep, #6a3fa8); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Packed Mosaic",
+    "overview": "Scholarship Desk is a high-density mosaic in the Japanese web-portal tradition (catalog world `japanese-high-density-web`, chosen by the user; seed `ab41c36ee743b8e1`). Everything the applicant must know and do sits on one screen as a grid of hairline-ruled rectangular modules: next deadlines, what needs them, pipeline and fit, documents, drafts, what is coming up, and the full list. Nothing floats, nothing is padded for air. Information is the decoration.\n\nThe palette is **lilac, white and black**, the user's choice on 2026-11-12, replacing the original utility red. Lilac owns the shell as fields: the top bar, the tab strip and every module header. Black carries text, the active tab, module tabs and decided tags. Deep lilac is the single accent that carries text and urgency: days-left figures, notes, urgent tags and focus. Numbers are set like prices in a DIN-style face so the eye can scan figures down a column. Text is the platform UI sans at 12 to 13px with tight leading.\n\nThe system runs under hard constraints that are part of its identity: system font stacks only (the user declined self-hosting a web font on 2026-11-12), a CSP of `default-src 'self'` (no external fonts, no inline styles), DOM built with `textContent`, and no build step. There is no dark theme: the background is always white, whatever the system setting (the user's choice, 2026-11-12).",
+    "keyCharacteristics": [
+      "12-column mosaic of bordered modules with 8px gutters, everything above the fold on desktop.",
+      "Lilac shell: lilac top bar, light lilac tab strip and module header bars, each module headed by a black tab at its left edge.",
+      "Heavy tabular DIN-style numerals for days left, counts, dates and KPIs, in deep lilac when urgent.",
+      "Three colours only: lilac, white, black. Status lives in outlined tags; only black (decided) and deep lilac (urgent) fill.",
+      "2px corners, 1px hairlines, dotted row separators, zero shadows."
+    ],
+    "rules": [
+      { "name": "The Three-Colour Rule", "body": "Lilac, white and black, nothing else. Lilac is a field (bar, strip, header); black is text and decisions; deep lilac is the only accent and marks urgency and focus. Never add a hue for status.", "section": "colors" },
+      { "name": "The Outline-Only Status Rule", "body": "States appear as text with a 1px outline on the panel colour. The only filled tags are ink (decided) and deep lilac (urgent).", "section": "colors" },
+      { "name": "The Price Figure Rule", "body": "Every figure the applicant scans (days left, counts, dates, word counts) is set in the numeral face at 700 with tabular figures (`font-variant-numeric: tabular-nums` is on `body`). Words never use the numeral face.", "section": "typography" },
+      { "name": "The Two-Step Size Rule", "body": "Body copy lives between 11px and 15px. Size contrast comes from the 30px numerals, not from big headings.", "section": "typography" },
+      { "name": "The Above-the-Fold Rule", "body": "On a desktop viewport the Overview shows deadlines, needs, pipeline/fit, documents and drafts without scrolling. A new module earns its place by being scannable at this density.", "section": "layout" },
+      { "name": "The Hairline-Not-Shadow Rule", "body": "Separation is a 1px line or a tone step, never a shadow or blur.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do put every new block of information in a module: Lilac Mist bar, black left tab, title, optional deep-lilac numeral note, \"View all\" link.",
+      "Do set every scannable figure in the numeral face (Bahnschrift / DIN Alternate) at 700 with tabular figures.",
+      "Do express status with the tag grammar: outlined for a state, ink filled for decided, deep lilac filled for urgent.",
+      "Do keep rows on one line with an ellipsis before the figure column, separated by 1px dotted rules.",
+      "Do define every colour as a token on `:root`; there is one (light) theme.",
+      "Do keep fonts to system stacks and all styles in `styles.css` (CSP `default-src 'self'`, no inline styles, no build step)."
+    ],
+    "donts": [
+      "Don't introduce any hue beyond lilac, white and black (red, green, blue, ochre are retired).",
+      "Don't put white text on light lilac; lilac fields always carry black text.",
+      "Don't add a dark theme or follow the system's dark mode; the background stays white (the user's choice, 2026-11-12).",
+      "Don't add shadows, blur or floating cards; separation is hairlines and tone.",
+      "Don't load external or self-hosted web fonts; the user declined them on 2026-11-12.",
+      "Don't spread the Overview into airy stat cards with large padding; the mosaic is meant to be packed.",
+      "Don't round corners beyond 2px."
+    ]
+  }
+}

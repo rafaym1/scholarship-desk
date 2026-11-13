@@ -1,0 +1,62 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "dashboard/styles.css"
+        ],
+        "createdAt": "2026-11-12T16:40:41.718Z",
+        "reason": "Claude's judgment: the only non-DESIGN.md faces are the monospace stack for inline code/commands (code element), a legitimate code use, not brand type"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html"
+        ],
+        "createdAt": "2026-11-12T16:40:41.876Z",
+        "reason": "Claude's judgment: throwaway decision-round sketches of alternative worlds (git-ignored); their fonts intentionally differ from the chosen system"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-11-12T16:40:42.039Z",
+        "reason": "Claude's judgment: throwaway decision-round sketches of alternative worlds (git-ignored); their fonts intentionally differ from the chosen system"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-dense.html"
+        ],
+        "createdAt": "2026-11-12T16:40:42.192Z",
+        "reason": "Claude's judgment: throwaway decision-round sketches of alternative worlds (git-ignored); their fonts intentionally differ from the chosen system"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-wallet.html"
+        ],
+        "createdAt": "2026-11-12T16:40:42.393Z",
+        "reason": "Claude's judgment: throwaway decision-round sketches of alternative worlds (git-ignored); their fonts intentionally differ from the chosen system"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/canon.html"
+        ],
+        "createdAt": "2026-11-12T16:40:42.542Z",
+        "reason": "Claude's judgment: throwaway decision-round sketches of alternative worlds (git-ignored); their fonts intentionally differ from the chosen system"
+      }
+    ]
+  }
+}

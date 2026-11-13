@@ -1,0 +1,11 @@
+# Personal data: never commit
+data/
+documents/
+submitted/
+
+# Python / tooling
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.claude/settings.local.json

@@ -1,0 +1,13 @@
+#!/bin/sh
+# Safety net: refuse to commit personal files even if .gitignore is edited by mistake.
+# Exception: README screenshots in docs/screenshots/ (PNG only, made from demo data, never real data).
+bad=$(git diff --cached --name-only --diff-filter=ACMR \
+  | grep -Ev '^docs/screenshots/[A-Za-z0-9_-]+\.png$' \
+  | grep -Ei '^(data|documents|submitted)/|\.(pdf|docx?|odt|rtf|heic|jpe?g|png)$')
+if [ -n "$bad" ]; then
+  echo "Commit blocked: these look like personal files (CVs, transcripts, profile data):" >&2
+  echo "$bad" >&2
+  echo "Unstage them with: git rm --cached <file>   (the file stays on your disk)" >&2
+  exit 1
+fi
+exit 0

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Scholarship Desk</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <a class="mark" href="/" aria-label="Scholarship Desk, overview">Scholarship<span>Desk</span></a>
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <input id="search" type="search" placeholder="Search opportunities, countries, fields" aria-label="Search opportunities">
+    </label>
+    <div class="meta">
+      <p id="profile-line"></p>
+      <p id="watch-line"></p>
+    </div>
+    <div class="top-actions">
+      <button id="refresh" class="ghost" type="button" title="Reload data">Refresh</button>
+      <button id="add-link" class="primary" type="button">Add link</button>
+    </div>
+  </header>
+  <nav class="tabs" id="tabs" aria-label="Sections">
+    <button type="button" data-tab="overview" class="active">Overview</button>
+    <button type="button" data-tab="opps">Opportunities <span class="count" data-count="opps"></span></button>
+    <button type="button" data-tab="yourself">Apply yourself <span class="count" data-count="yourself"></span></button>
+    <button type="button" data-tab="week">This week <span class="count" data-count="week"></span></button>
+    <button type="button" data-tab="near">Near misses <span class="count" data-count="near"></span></button>
+    <button type="button" data-tab="profile">Profile <span class="count" data-count="profile"></span></button>
+    <button type="button" data-tab="docs">Documents <span class="count" data-count="docs"></span></button>
+    <button type="button" data-tab="drafts">Drafts <span class="count" data-count="drafts"></span></button>
+    <button type="button" data-tab="submitted">Submitted <span class="count" data-count="submitted"></span></button>
+    <button type="button" data-tab="supervisors">Supervisors <span class="count" data-count="supervisors"></span></button>
+    <button type="button" data-tab="links">Add link <span class="count" data-count="links"></span></button>
+  </nav>
+  <main id="view" tabindex="-1"><p class="muted pad">Loading…</p></main>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

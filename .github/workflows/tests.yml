@@ -1,0 +1,31 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.10", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Time zone data (Windows has none built in; setup.ps1 installs it the same way)
+        if: runner.os == 'Windows'
+        run: python -m pip install tzdata
+      - name: Run the tests (standard library only, no network)
+        run: python -m unittest discover -s tests -v
+      - name: Check the dashboard script parses
+        if: matrix.python == '3.13'
+        run: node --check dashboard/app.js
